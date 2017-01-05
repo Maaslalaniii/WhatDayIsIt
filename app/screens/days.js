@@ -3,6 +3,8 @@ import { View, Text } from 'react-native';
 
 import styles from '../styles';
 
+const API_URL = 'https://wdii-api.herokuapp.com/';
+
 export default class Days extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +17,7 @@ export default class Days extends Component {
   componentWillMount() {
     // Get information from the opan.cf/day api and populate the state
     // https://github.com/Maaslalaniii/wdii-api
-    fetch('https://wdii-api-maaslalaniii.c9users.io/')
+    fetch(API_URL)
       .then(response => response.json())
       .then(response => this.setState({ days: response }))
   }

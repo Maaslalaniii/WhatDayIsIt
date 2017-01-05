@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-import styles from '../styles'
+import styles from '../styles';
 
 export default class Days extends Component {
   constructor(props) {
@@ -23,9 +23,10 @@ export default class Days extends Component {
   render() {
     return (
       <View style={styles.container}>
+
         {
           // While state is still undefined show a loading text view.
-          !this.state.days ? <Text style={styles.loading}>Loading...</Text> :
+          !this.state.days ? <Text style={styles.loading}>Loading...</Text> : 
           
           // When the state is populated render that information. 
           this.state.days.map((day, key) => {
@@ -35,15 +36,14 @@ export default class Days extends Component {
                 <Text style={styles.day}>{day.day}</Text>
                 <Text style={styles.events}>
                   {
-                    day.events.map((dayEvent, key) => {
-                      return <Text key={key}>{dayEvent}</Text>
-                    })
+                    day.events.map((dayEvent, key) => <Text key={key}>{dayEvent}</Text>)
                   }
                 </Text>
               </View>
             );
           })
         }
+
       </View>
     );
   }

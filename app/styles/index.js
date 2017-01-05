@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   home: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+    backgroundColor: '#FFF'
   },
   header: {
     height: 60,
@@ -72,7 +72,16 @@ const styles = StyleSheet.create({
   },
 
   // Schedule page
-
+  subject: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#EEE'
+  },
+  textInput: {
+    width: width - 100,
+    textAlign: 'center'
+  }
 });
 
 module.exports = styles;

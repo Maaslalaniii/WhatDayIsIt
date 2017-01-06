@@ -3,8 +3,6 @@ import { View, Text } from 'react-native';
 
 import styles from '../styles';
 
-// import PTRView from 'react-native-pull-to-refresh';
-
 const API_URL = 'https://wdii-api.herokuapp.com/';
 
 export default class Days extends Component {

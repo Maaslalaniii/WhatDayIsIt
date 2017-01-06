@@ -12,20 +12,25 @@ export default class Subject extends Component {
     }
   }
 
-  render() {
+  _renderSubject() {
     return (
-      !this.state.editing ?
-      
-      <TouchableHighlight underlayColor='#EEE' onPress={() => this.setState({editing: true})} style={[styles.container, styles.subject]}>
+      <TouchableHighlight underlayColor='#EEE' onPress={() => this.setState({ editing: true })} style={[styles.container, styles.subject]}>
         <Text>{this.state.subject}</Text>
       </TouchableHighlight>
-      
-      :
+    )
+  }
 
-      <TouchableHighlight underlayColor='#EEE' onPress={() => this.setState({editing: false})} style={[styles.container, styles.subject]}>
-        <TextInput style={styles.textInput} onChangeText={(subject) => this.setState({subject})} value={this.state.subject} onSubmitEditing={() => this.setState({editing: false})} onBlur={() => this.setState({editing: false})} />
+  _renderSubjectEditing() {
+    return (
+      <TouchableHighlight underlayColor='#EEE' onPress={() => this.setState({ editing: false })} style={[styles.container, styles.subject]}>
+        <TextInput style={styles.textInput} onChangeText={(subject) => this.setState({ subject })} value={this.state.subject} onSubmitEditing={() => this.setState({ editing: false })} onBlur={() => this.setState({ editing: false })} />
       </TouchableHighlight>
+    )
+  }
 
+  render() {
+    return (
+      this.state.editing ? this._renderSubjectEditing() : this._renderSubject()
     );
   }
 }

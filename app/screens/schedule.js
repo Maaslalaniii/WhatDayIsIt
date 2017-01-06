@@ -19,13 +19,17 @@ export default class Schedule extends Component {
     }
   }
 
+  componentDidMount() {
+    alert('Tap the subjects to enter editing mode and enter your semester subjects.')
+  }
+
   render() {
     return (
       <View style={styles.container}>
         {
           this.state.subjects.map((subject, key) => {
             return (
-              <Subject subject={`Subject ${key + 1}`} key={key} />
+              <Subject subject={`Period ${subject}`} key={key} />
             )
           })
         }
